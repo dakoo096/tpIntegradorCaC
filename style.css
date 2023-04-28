@@ -1,0 +1,237 @@
+*{
+    width: 100%;
+}
+
+/*--------------
+NAVBAR
+---------------*/
+nav{
+    background-color: #353A40;
+}
+nav div{
+    padding: 1rem;
+
+}
+nav div div ul {
+    width: 100%;
+    display: block;
+}
+nav div div ul li{
+    padding:0 1rem;
+    width: max-content;
+}
+.navbar div a img{
+    width: 6vw;
+}
+
+
+
+/*--------------
+HERO
+---------------*/
+.container-hero{
+    background-image: url(/img/ba1.jpg);
+    object-position: contain;
+    background-repeat: no-repeat;
+    background-position:center ;
+    height: 35rem;
+    position: relative;
+    overflow: scroll;   
+}
+
+.container-hero::before{
+    content: '';
+    width: 100%;
+    height: 35rem;
+    background: rgba(0, 0, 0, 0.479);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.container-hero div{
+    color: aliceblue;
+    position: absolute;
+    z-index:10;
+    width: 39rem;
+    align-items: center;
+    top: 10vw;
+    right: 10vw;
+    text-align: right;
+}
+.container-hero div h1{
+    font-size: 3em;
+    font-weight: 600;
+}
+.container-hero div p{
+    font-size: 1.2rem;
+}
+.container-hero div button{
+    margin: 0 1vw 0 0;
+    padding: 0.8rem;
+    width: auto;
+    font-size: 1.2rem;
+}
+@media (max-width: 992px){
+    .container-hero div{
+        align-content: center;
+        width: 80%;
+        margin: 2vw auto;
+        text-align: center;
+        top: 15%;
+    }
+    .container-hero div button{
+        width: 40%;
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 576px){
+    .container-hero div h1{
+        font-size: 2rem;
+    }
+    .container-hero div p{
+        font-size: 1rem;
+    }
+    .container-hero div button{
+        font-size: 1rem;
+    }
+}
+
+
+/*--------------
+CARDS 
+---------------*/
+.containercards p{
+    margin: 0;
+}
+.card-body{
+    overflow: scroll;
+}
+.card-body p{
+    font-size: 1rem;
+}
+.containercards div div div{
+     height: 38rem;
+     
+}
+.containercards div div div img{
+    height: 23rem;
+    object-fit: cover;
+}
+
+
+
+/*------------------
+CONTAINER
+------------------*/
+
+.containerhonolulu{
+    margin-top: 5vw;
+    height: 33rem; 
+    
+}
+.containerhonolulu div{
+    height: 100%;
+    padding: 0 0.1rem;
+    text-align: left;
+}
+ .containerhonolulu div div img{
+    height: 33rem;
+    object-fit: cover;
+}
+.containerhonolulu div .containertexto{
+    background-color: #353A40;
+    overflow: scroll;
+}
+.containerhonolulu div .containertexto .texto{
+    padding: 1.5rem;
+}
+.containerhonolulu div .containertexto .texto h2{
+    font-size: 1.5rem;
+}
+.containerhonolulu div .containertexto .texto p{
+    font-size: 1rem;
+}
+.containerhonolulu div .containertexto .texto button{
+    width: auto;
+}
+@media (max-width: 576px){
+    .containerhonolulu div .containertexto .texto h2{
+        font-size: 1rem;
+    }
+    .containerhonolulu div .containertexto .texto p{
+        font-size: 0.8rem;
+        justify-content: center;
+    }
+    .containerhonolulu div .containertexto .texto button{
+        font-size: 0.8rem;
+    }
+    .containerhonolulu div .containertexto{
+        width: 74% ;
+    }
+    .containerhonolulu div .imagen{
+        width: 26%;
+    }
+}
+
+
+
+/*---------------
+FORMULARIO
+-----------------*/
+
+.seccionform p{
+    font-size: 2.5vh;
+}
+.seccionform span{
+    text-decoration:underline dotted;
+}
+.seccionform form div input{
+    border-radius: 5px;
+    width: 47%;
+}
+.seccionform form .aclaracion{
+    font-size: 0.8rem;
+}
+
+.seccionform form div button{
+    background-color: #96C93E;
+    border: none;
+}
+
+/*-------------
+FOOTER
+-------------*/
+
+footer div{
+    background-color: #1D3A4A;
+}
+footer div ul{
+    height: 5rem; 
+    align-items: center;
+    margin: 0;
+}
+footer div ul li{
+    list-style-type: none;
+    width: auto;
+    padding: 0 1rem;
+    text-align: center;
+}
+footer div ul li a{
+    width: 100%;
+}
+@media (max-width: 992px){
+    footer div ul li a{
+        font-size: 0.7rem;
+    }
+}
+
+@media (max-width: 576px){
+    footer div ul li{
+        padding:0 0.3rem;
+    }
+    footer div ul li a{
+        font-size: 0.5rem;
+    }
+}
