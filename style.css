@@ -36,7 +36,6 @@ HERO
     background-position:center ;
     height: 35rem;
     position: relative;
-    overflow: scroll;   
 }
 
 .container-hero::before{
