@@ -35,7 +35,7 @@ HERO
     background-repeat: no-repeat;
     background-position:center ;
     height: 35rem;
-    position: relative;
+    position: relative;   
 }
 
 .container-hero::before{
@@ -86,6 +86,9 @@ HERO
 }
 
 @media (max-width: 576px){
+    .container-hero{
+        overflow: scroll;
+        }
     .container-hero div h1{
         font-size: 2rem;
     }
@@ -104,9 +107,6 @@ CARDS
 .containercards p{
     margin: 0;
 }
-.card-body{
-    overflow: scroll;
-}
 .card-body p{
     font-size: 1rem;
 }
@@ -119,7 +119,11 @@ CARDS
     object-fit: cover;
 }
 
-
+@media (max-width: 576px){
+    .card-body{
+        overflow: scroll;
+    }
+}
 
 /*------------------
 CONTAINER
@@ -141,7 +145,6 @@ CONTAINER
 }
 .containerhonolulu div .containertexto{
     background-color: #353A40;
-    overflow: scroll;
 }
 .containerhonolulu div .containertexto .texto{
     padding: 1.5rem;
@@ -168,6 +171,7 @@ CONTAINER
     }
     .containerhonolulu div .containertexto{
         width: 74% ;
+        overflow: scroll;
     }
     .containerhonolulu div .imagen{
         width: 26%;
