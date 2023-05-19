@@ -1,5 +1,6 @@
 *{
     width: 100%;
+    scroll-behavior: smooth;
 }
 
 /*--------------
@@ -19,6 +20,7 @@ nav div div ul {
 nav div div ul li{
     padding:0 1rem;
     width: max-content;
+
 }
 .navbar div a img{
     width: 6vw;
@@ -100,6 +102,11 @@ HERO
     }
 }
 
+/*--------------
+BOTON
+BACK TO TOP 
+--------------*/
+/* Estilo del botón */
 
 /*--------------
 CARDS 
@@ -107,12 +114,11 @@ CARDS
 .containercards p{
     margin: 0;
 }
-.card-body p{
+.card-body1 p{
     font-size: 1rem;
 }
 .containercards div div div{
-     height: 38rem;
-     
+    height: 38rem;  
 }
 .containercards div div div img{
     height: 23rem;
@@ -120,7 +126,7 @@ CARDS
 }
 
 @media (max-width: 576px){
-    .card-body{
+    .card-body1{
         overflow: scroll;
     }
 }
@@ -139,7 +145,7 @@ CONTAINER
     padding: 0 0.1rem;
     text-align: left;
 }
- .containerhonolulu div div img{
+.containerhonolulu div div img{
     height: 33rem;
     object-fit: cover;
 }
@@ -237,4 +243,13 @@ footer div ul li a{
     footer div ul li a{
         font-size: 0.5rem;
     }
+}
+
+
+/*-------------------------
+COMPRAR TICKETS
+-------------------------*/
+
+.comprar-tickets-button button{
+    background-color: #96C93E;
 }
