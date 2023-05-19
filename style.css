@@ -106,8 +106,20 @@ HERO
 BOTON
 BACK TO TOP 
 --------------*/
-/* Estilo del botón */
+#myBtn {
+    display:none;
+    width: 4rem; /* Hidden by default */
+    position: fixed; /* Fixed/sticky position */
+    right: 30px;
+    z-index: 5;
+    border: none;
+    outline: none;
+    cursor: pointer; /* Add a mouse pointer on hover */
 
+  }
+  #myBtn:hover {
+    background-color: #555; /* Add a dark-grey background on hover */
+  }
 /*--------------
 CARDS 
 ---------------*/
