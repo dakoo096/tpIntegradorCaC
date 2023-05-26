@@ -1,7 +1,7 @@
 // Get the button:
 let mybutton = document.getElementById("myBtn");
 
-// When the user scrolls down 20px from the top of the document, show the button
+// cuando se scrollea para abajo aparece el boton
 window.onscroll = function() {scrollFunction()};
 
 function scrollFunction() {
@@ -12,8 +12,39 @@ function scrollFunction() {
   }
 }
 
-// When the user clicks on the button, scroll to the top of the document
+// cuando se hace clic va a la parte superior
 function topFunction() {
-  document.body.scrollTop = 0; // For Safari
-  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0; // chrome, Firefox,
+}
+
+
+
+
+/*----------------
+COMPRAR TICKETS
+----------------*/
+
+function calcularTotal(){
+  var cantidad = parseInt(document.getElementById('cantidad').value);
+  var categoria = document.getElementById('categoria').value;
+  var precio = 200;
+  var descuento;
+
+  if (categoria === 'categoriaEstudiante'){
+    descuento = 0.80;
+  } else if (categoria === 'categoriaTrainee'){
+    descuento = 0.50;
+  } else if (categoria === 'categoriaJunior'){
+   descuento = 0.15;
+  }
+
+  var total = cantidad * precio * (1 - descuento);
+  total = Math.round(total);
+  document.getElementById('total').innerText = total;
+  
+}
+
+function borrarTotal() {
+  document.getElementById('total').innerText = '';
 }
