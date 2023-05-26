@@ -104,17 +104,17 @@ BACK TO TOP
 --------------*/
 #myBtn {
   display: none;
-  width: 4rem; /* Hidden by default */
-  position: fixed; /* Fixed/sticky position */
+  width: 4rem; 
+  position: fixed; 
   right: 30px;
   bottom: 10px;
   z-index: 5;
   border: none;
   outline: none;
-  cursor: pointer; /* Add a mouse pointer on hover */
+  cursor: pointer;
 }
 #myBtn:hover {
-  background-color: #555; /* Add a dark-grey background on hover */
+  background-color: #555; 
 }
 /*--------------
 CARDS 
