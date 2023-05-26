@@ -1,4 +1,4 @@
-// Get the button:
+
 let mybutton = document.getElementById("myBtn");
 
 // cuando se scrollea para abajo aparece el boton
