@@ -2,7 +2,9 @@
 let mybutton = document.getElementById("myBtn");
 
 // cuando se scrollea para abajo aparece el boton
-window.onscroll = function() {scrollFunction()};
+window.onscroll = function () {
+  scrollFunction();
+};
 
 function scrollFunction() {
   if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
@@ -18,33 +20,29 @@ function topFunction() {
   document.documentElement.scrollTop = 0; // chrome, Firefox,
 }
 
-
-
-
 /*----------------
 COMPRAR TICKETS
 ----------------*/
 
-function calcularTotal(){
-  var cantidad = parseInt(document.getElementById('cantidad').value);
-  var categoria = document.getElementById('categoria').value;
+function calcularTotal() {
+  var cantidad = parseInt(document.getElementById("cantidad").value);
+  var categoria = document.getElementById("categoria").value;
   var precio = 200;
   var descuento;
 
-  if (categoria === 'categoriaEstudiante'){
-    descuento = 0.80;
-  } else if (categoria === 'categoriaTrainee'){
-    descuento = 0.50;
-  } else if (categoria === 'categoriaJunior'){
-   descuento = 0.15;
+  if (categoria === "categoriaEstudiante") {
+    descuento = 0.8;
+  } else if (categoria === "categoriaTrainee") {
+    descuento = 0.5;
+  } else if (categoria === "categoriaJunior") {
+    descuento = 0.15;
   }
 
   var total = cantidad * precio * (1 - descuento);
   total = Math.round(total);
-  document.getElementById('total').innerText = total;
-  
+  document.getElementById("total").innerText = total;
 }
 
 function borrarTotal() {
-  document.getElementById('total').innerText = '';
+  document.getElementById("total").innerText = "";
 }
