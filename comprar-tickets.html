@@ -69,7 +69,7 @@
     <section class="tarjeta-descuentos mt-4 container-fluid">
       <div class="row justify-content-center mx-auto">
          <div class="col-xs-12 col-sm-4 col-md-3 col-xl-2 mb-5">
-          <div class="card border border-primary rounded-0">
+          <div class="card border border-primary rounded-0 ">
             <div class="card-body text-center">
               <h5 class="card-title">Estudiante</h5>
               <p class="card-text">Tienen un descuento</p>
@@ -106,48 +106,58 @@
     <section class="formulario-venta w-100 container-fluid mb-4">
       <p class="text-center mb-0">VENTA</p>
       <h3 class="text-center fs-2 mb-0">VALOR DE TICKET $200</h3>
-      <form class="">
+      <form class="needs-validation" method="post">
         <div class="d-flex w-75 p-0 container-fluid">
           <div class="w-50 me-1">
-            <label for="name" class="form-label"></label>
-            <input type="text" class="form-control" id="textname" aria-describedby="emailHelp" placeholder="Nombre">
+            <label for="nombre" class="form-label"></label>
+            <input type="text" class="form-control" id="nombre" placeholder="Nombre" required>
           </div>
           <div class="w-50 ms-1">
-            <label for="lastname" class="form-label"></label>
-            <input type="text" class="form-control" id="textlastname" aria-describedby="lastname" placeholder="Apellido">
+            <label for="apellido" class="form-label"></label>
+            <input type="text" class="form-control" id="apellido" aria-describedby="lastname" placeholder="Apellido" minlength="2"required>
           </div>
         </div>
         <div class="w-75 p-0 container-fluid ">
-          <label for="exampleInputEmail1" class="form-label"></label>
-          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Correo">
+          <label for="correo" class="form-label"></label>
+          <input type="email" class="form-control" id="correo" aria-describedby="emailHelp"  placeholder="Correo" required>
         </div>
         <div class="d-flex w-75 p-0 container-fluid mt-3">
           <div class="w-50 me-1">
-            <label for="cantidadtickets" class="form-label">Cantidad</label>
-            <input type="number" class="form-control" id="cantidad" aria-describedby="cantidadtickets" placeholder="cantidad">
+            <label for="cantidad" class="form-label">Cantidad</label>
+            <input type="number" class="form-control" id="cantidad" min="1" value="1" required
+            aria-describedby="cantidadtickets" placeholder="cantidad">
           </div>
           <div class="mb-3 w-50 ms-1">
-            <label for="categorialist" class="form-label" >Categoria</label>
+            <label for="categoria" class="form-label" >Categoria</label>
             <select class="form-select" aria-label="Default select example" id="categoria" name="categoria">
-              <option value="categoriaEstudiante">Estudiante</option>
-              <option value="categoriaTrainee">Trainee</option>
-              <option value="categoriaJunior">Junior</option>
+              <option value="Estudiante">Estudiante</option>
+              <option value="Trainee">Trainee</option>
+              <option value="Junior">Junior</option>
             </select>
           </div>
         </div>
-        <div class="w-75 p-0 mt-3 mb-5 container-fluid 
-          ">
+        <div class="w-75 p-0 mt-3 mb-5 container-fluid ">
           <div class="w-100 bg-primary bg-gradient bg-opacity-25 rounded">
-            <p class="mb-0 p-3">Total a Pagar: $  <span id="total"></span></p>
+            <p class="mb-0 p-3">Total a Pagar: $ <span id="total"></span></p>
           </div>
         </div>
         <div class="d-flex w-75 p-0 container-fluid comprar-tickets-button">
           <div class="w-100 d-flex">
-            <button type="button" onclick="borrarTotal()" class="btn w-50 me-1 text-white btn-success border-0">Borrar</button>
-            <button type="button" onclick="calcularTotal()" class="btn w-50 ms-1  text-white btn-success border-0" >Resumen</button>
+            <button type="button" onclick="borrarDatos()" class="btn w-50 me-1 text-white btn-success border-0">Borrar</button>
+            <button type="button" onclick="mostrarResumen()" class="btn w-50 ms-1  text-white btn-success border-0" >Resumen</button>
           </div>
         </div>
-      </form>      
+      </form>  
+      <div id="resumenContainer" class="w-100 m-0" style="display: none;">
+        <div class="container-resumen p-5 w-75 text-light bg-primary bg-gradient
+        border border-primary rounded container-fluid">
+          <div><a href="comprar-tickets.html" id="cerrar" class="text-decoration-none text-white d-block
+            m-0 link-opacity-25">X</a></div>
+          <h2 class="text-center">Resumen de compra</h2>
+          
+          <div id="resumen" class="bg-secondary border p-4 overflow-auto"></div>
+        </div>
+      </div>    
     </section>
 
 

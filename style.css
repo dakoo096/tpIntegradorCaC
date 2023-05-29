@@ -84,9 +84,6 @@ HERO
 }
 
 @media (max-width: 576px) {
-  .container-hero {
-    overflow: scroll;
-  }
   .container-hero div h1 {
     font-size: 2rem;
   }
@@ -116,6 +113,8 @@ BACK TO TOP
 #myBtn:hover {
   background-color: #555; 
 }
+
+
 /*--------------
 CARDS 
 ---------------*/
@@ -131,12 +130,6 @@ CARDS
 .containercards div div div img {
   height: 23rem;
   object-fit: cover;
-}
-
-@media (max-width: 576px) {
-  .card-body1 {
-    overflow: scroll;
-  }
 }
 
 /*------------------
@@ -184,7 +177,6 @@ CONTAINER
   }
   .containerhonolulu div .containertexto {
     width: 74%;
-    overflow: scroll;
   }
   .containerhonolulu div .imagen {
     width: 26%;
@@ -258,3 +250,22 @@ COMPRAR TICKETS
   background-color: #96c93e;
 }
 
+
+/*----------------
+pop-up resumen
+-----------------*/
+
+#resumenContainer{
+  position:absolute;
+  top: 18rem;
+  z-index: 2;
+}
+
+.container-resumen{
+  position: relative;
+}
+#cerrar{
+  right: 1rem;
+  position: absolute;
+  width: auto;
+}

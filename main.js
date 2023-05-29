@@ -1,4 +1,3 @@
-
 let mybutton = document.getElementById("myBtn");
 
 // cuando se scrollea para abajo aparece el boton
@@ -23,26 +22,50 @@ function topFunction() {
 /*----------------
 COMPRAR TICKETS
 ----------------*/
-
-function calcularTotal() {
+//se establecen las variables
+function mostrarResumen() {
+  var nombre = document.getElementById("nombre").value;
+  var apellido = document.getElementById("apellido").value;
+  var correo = document.getElementById("correo").value;
   var cantidad = parseInt(document.getElementById("cantidad").value);
   var categoria = document.getElementById("categoria").value;
   var precio = 200;
   var descuento;
 
-  if (categoria === "categoriaEstudiante") {
+  //se establecen los descuentos por categoria
+  if (categoria === "Estudiante") {
     descuento = 0.8;
-  } else if (categoria === "categoriaTrainee") {
+  } else if (categoria === "Trainee") {
     descuento = 0.5;
-  } else if (categoria === "categoriaJunior") {
+  } else if (categoria === "Junior") {
     descuento = 0.15;
   }
 
   var total = cantidad * precio * (1 - descuento);
-  total = Math.round(total);
-  document.getElementById("total").innerText = total;
+  document.getElementById("total").textContent = total.toFixed(2);
+
+  //se crea objeto resumen con los datos ingresados
+  var resumenHTML = `
+    <p>Nombre: ${nombre}</p>
+    <p>Apellido: ${apellido}</p>
+    <p>Correo: ${correo}</p>
+    <p>Cantidad: ${cantidad}</p>
+    <p>Categoría: ${categoria}</p>
+    <p>Total a Pagar: $${total.toFixed(2)}</p>
+  `;
+
+  //se muestran los datos
+  document.getElementById("resumen").innerHTML = resumenHTML;
+  document.getElementById("resumenContainer").style.display = "block";
 }
 
-function borrarTotal() {
-  document.getElementById("total").innerText = "";
+//se crea funcion borrar datos para restablecer todo a 0
+function borrarDatos() {
+  document.getElementById("nombre").value = "";
+  document.getElementById("apellido").value = "";
+  document.getElementById("correo").value = "";
+  document.getElementById("cantidad").value = "1";
+  document.getElementById("categoria").selectedIndex = 0;
+  document.getElementById("total").textContent = "";
+  document.getElementById("resumenContainer").style.display = "none";
 }
