@@ -12,6 +12,10 @@
       crossorigin="anonymous"
     />
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
     <title>Proyecto Integrador 2</title>
   </head>
   <body>
@@ -68,42 +72,44 @@
 
     <section class="tarjeta-descuentos mt-4 container-fluid">
       <div class="row justify-content-center mx-auto">
-         <div class="col-xs-12 col-sm-4 col-md-3 col-xl-2 mb-5">
+        <div class="col-xs-12 col-sm-4 col-md-3 col-xl-2 mb-5 animate__animated animate__fadeInUp animate__delay-1s" id="categoria-estudiante" onclick="seleccionarCategoria('Estudiante')">
           <div class="card border border-primary rounded-0 ">
             <div class="card-body text-center">
               <h5 class="card-title">Estudiante</h5>
               <p class="card-text">Tienen un descuento</p>
-              <p class="fw-bold">80%</span>
+              <p class="fw-bold">80%</p>
               <p>* presentar documentacion</p>
             </div>
           </div>
         </div>
-         <div class="col-xs-12 col-sm-4 col-md-3 col-xl-2 mb-5">
+        <div class="col-xs-12 col-sm-4 col-md-3 col-xl-2 mb-5 animate__animated animate__fadeInUp animate__delay-2s" id="categoria-trainee" onclick="seleccionarCategoria('Trainee')">
           <div class="card border border-success text-center rounded-0">
             <div class="card-body">
               <h5 class="card-title">Trainee</h5>
               <p class="card-text">Tienen un descuento</p>
-              <p class="fw-bold">50%</span>
+              <p class="fw-bold">50%</p>
               <p>* presentar documentacion</p>
             </div>
           </div>
         </div>
-        <div class="col-xs-12 col-sm-4 col-md-3 col-xl-2 mb-5">
+        <div class="col-xs-12 col-sm-4 col-md-3 col-xl-2 mb-5 animate__animated animate__fadeInUp animate__delay-3s" id="categoria-junior" onclick="seleccionarCategoria('Junior')">
           <div class="card border border-warning text-center rounded-0">
             <div class="card-body">
               <h5 class="card-title">Junior</h5>
               <p class="card-text">Tienen un descuento</p>
-              <p class="fw-bold">15%</span>
+              <p class="fw-bold">15%</p>
               <p>* presentar documentacion</p>
             </div>
           </div>
         </div>
       </div>
     </section>
+    
     <section class="boton-back-to-top">
       <button onclick="topFunction()" id="myBtn" title="Go to top" class="btn rounded align-items-center p-3 bg-secondary bg-gradient bg-opacity-75"><box-icon name='up-arrow-alt' animation='tada' flip='vertical' ></box-icon></button>
     </section> 
-    <section class="formulario-venta w-100 container-fluid mb-4">
+
+    <section class="formulario-venta w-100 container-fluid mb-4 animate__animated animate__fadeInDown">
       <p class="text-center mb-0">VENTA</p>
       <h3 class="text-center fs-2 mb-0">VALOR DE TICKET $200</h3>
       <form class="formulario needs-validation" method="post">
@@ -111,24 +117,36 @@
           <div class="w-50 me-1">
             <label for="nombre" class="form-label"></label>
             <input type="text" class="form-control" id="nombre" placeholder="Nombre" required>
+            <div class="invalid-tooltip w-25">
+              Es necesario completar el campo
+            </div>
           </div>
           <div class="w-50 ms-1">
             <label for="apellido" class="form-label"></label>
             <input type="text" class="form-control" id="apellido" aria-describedby="lastname" placeholder="Apellido" minlength="2"required>
           </div>
+          <div class="invalid-tooltip w-25">
+            Es necesario completar el campo
+          </div>
         </div>
         <div class="w-75 p-0 container-fluid ">
           <label for="correo" class="form-label"></label>
           <input type="email" class="form-control" id="correo" aria-describedby="emailHelp"  placeholder="Correo" required>
+          <div class="invalid-tooltip w-25">
+            Es necesario completar el campo
+          </div>
         </div>
         <div class="d-flex w-75 p-0 container-fluid mt-3">
           <div class="w-50 me-1">
             <label for="cantidad" class="form-label">Cantidad</label>
-            <input type="number" class="form-control" id="cantidad" min="1" value="1" required
-            aria-describedby="cantidadtickets" placeholder="cantidad">
+            <input type="number" class="form-control" id="cantidad" min="1" value="0" required
+              aria-describedby="cantidadtickets" placeholder="cantidad">
+              <div class="invalid-tooltip w-25">
+                Es necesario completar el campo
+              </div>
           </div>
           <div class="mb-3 w-50 ms-1">
-            <label for="categoria" class="form-label" >Categoria</label>
+            <label for="categoria" class="form-label">Categoria</label>
             <select class="form-select" aria-label="Default select example" id="categoria" name="categoria">
               <option value="Estudiante">Estudiante</option>
               <option value="Trainee">Trainee</option>
@@ -136,7 +154,7 @@
             </select>
           </div>
         </div>
-        <div class="w-75 p-0 mt-3 mb-5 container-fluid ">
+        <div class="w-75 p-0 mt-3 mb-5 container-fluid">
           <div class="w-100 bg-primary bg-gradient bg-opacity-25 rounded">
             <p class="mb-0 p-3">Total a Pagar: $ <span id="total"></span></p>
           </div>
@@ -144,18 +162,21 @@
         <div class="d-flex w-75 p-0 container-fluid comprar-tickets-button">
           <div class="w-100 d-flex">
             <button type="button" onclick="borrarDatos()" class="btn w-50 me-1 text-white btn-success border-0">Borrar</button>
-            <button type="button" onclick="mostrarResumen()" class="btn w-50 ms-1  text-white btn-success border-0" >Resumen</button>
-          </div>
+            <button type="button" onclick="validarFormulario()" class="btn w-50 me-1 text-white btn-success border-0">Resumen</button>
+          </div>          </div>
         </div>
       </form>  
-      <div id="resumenContainer" class="m-0 w-100" style="display: none;">
-        <div class="container-resumen p-4 w-75 text-light bg-primary bg-gradient
-        border border-primary rounded">
-          <a href="comprar-tickets.html" id="cerrar" class="text-decoration-none text-white d-block
-            m-0 link-opacity-25">X</a>
-          <h2 class="text-center">Resumen de compra</h2>
-          
-          <div id="resumen" class="bg-secondary border p-4 ></div>
+
+      <div id="resumenContainer" class="rounded animate__animated animate__zoomIn" style="display: none;">
+        <div class="container-resumen rounded text-light p-3">
+          <p id="cerrar" onclick="borrarDatos()" class="text-decoration-none">X</p>
+          <div id="resumen-container" class="align-content-center"> 
+            <h2 class="text-center mb-3">Resumen de compra</h2>
+            <div id="resumen-container" class="align-content-center">
+
+            <div id="resumen" class="fw-bolder"></div>
+            <button type="submit" onclick="enviarDatos()" class="btn fw-bolder">Comprar</button>
+          </div>
         </div>
       </div>    
     </section>

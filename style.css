@@ -2,6 +2,10 @@
   width: 100%;
   scroll-behavior: smooth;
 }
+/*-----------------------------------
+              INDEX
+------------------------------------*/
+
 
 /*--------------
 NAVBAR
@@ -115,9 +119,9 @@ BACK TO TOP
 }
 
 
-/*--------------
-CARDS 
----------------*/
+/*----------------
+CARDS PRINCIPALES
+-----------------*/
 .containercards p {
   margin: 0;
 }
@@ -242,41 +246,61 @@ footer div ul li a {
   }
 }
 
-/*-------------------------
-COMPRAR TICKETS
--------------------------*/
+/*-----------------------------
+          COMPRAR TICKETS
+------------------------------*/
 
 .comprar-tickets-button button {
   background-color: #96c93e;
 }
 
-
+#categoria-estudiante div:hover{
+  background-color: #B6CDFA;
+  cursor: pointer;
+}
+#categoria-trainee div:hover{
+  background-color: #78bd5383;
+  cursor: pointer;
+}
+#categoria-junior div:hover{
+  background-color: #FAF6B6;
+  cursor: pointer;
+}
 /*----------------
 pop-up resumen
 -----------------*/
 
 #resumenContainer{
-  position:absolute;
-  top: 18em;
-  left: 0;
-  right: 0;
-  z-index: 2;
+  position: fixed;
+  top: 10%;
+  left: 50%;
+  width: 90%;
+  padding: 5vw 10vw;
+  transform: translate(-50%, -50%);
+  background-color: #1d3a4a8e;
+  border: 2px solid #353a40;
 }
 
 .container-resumen{
-  position: relative;
-  margin: auto;
-}
-#cerrar{
-  right: 1rem;
-  position: absolute;
-  width: auto;
+  background-color: #1d3a4ab2;
+  border: 1px solid white;
 }
 
-@media (max-width: 576px) {
-  #resumenContainer{
-    top: 40rem;
+#resumen-container button{
+  background-color: #5e9942;
+  border: 1px solid white;
+}
+#cerrar{
+  top: 1rem;
+  right: 1rem;
+  color: #ffffff;
+  position: absolute;
+  width: 10px;
+  cursor: pointer;
   }
+
+@media (max-width: 576px) {
+
   .container-resumen {
     font-size: 12px;
   }
