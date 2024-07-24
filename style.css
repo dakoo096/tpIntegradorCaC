@@ -32,7 +32,7 @@ nav div div ul li {
 HERO
 ---------------*/
 .container-hero {
-  background-image: url(/img/ba1.jpg);
+  background-image: url(img/ba1.jpg);
   object-position: contain;
   background-repeat: no-repeat;
   background-position: center;
